@@ -11,7 +11,10 @@
     padding: 0;
     margin: 0;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #001A33;
 }
 
 .img-redes-sociais {
@@ -33,18 +36,19 @@
 
 .conteudo {
     background-color: #001A33;
-    padding: 7%;
+    padding: 5%;
     height: 150px;
     color: #fff;
-    /*     padding: 5%;
- */
 }
 
 .rodape {
     background-color: #1C2751;
     color: 001A33;
-    border: 2px solid #F05A9C;
     border-radius: 2px;
+}
+
+.img3-redes-sociais:hover {
+    color: pink;
 }
 
 
@@ -53,18 +57,15 @@
 
 /* ESTOQUE */
 
+.titulo-controle-de-estoque {
+    padding: 0px 0px 30px 0px;
+    font-size: 30px;
+}
+
 .produtos {
     width: 350px;
     height: 250px;
 }
 
-.produtos:hover {
-    color: black;
-}
-
 
 /* PRODUTO */
-
-.img-estilo:hover {
-    color: gray;
-}
