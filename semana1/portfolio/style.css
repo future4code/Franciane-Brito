@@ -1,0 +1,59 @@
+/* GERAL */
+
+
+/* .root {
+    --cor-principal: #272727;
+    : var(--cor-principal);
+}
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    background-color: #111628;
+    height: 100px;
+    color: #FFF;
+    font-variant: small-caps;
+    font-size: 25px;
+}
+
+.meu-nome {
+    padding: 20px;
+}
+
+
+/* CONTEUDO */
+
+.conteudo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6F6;
+    height: 400px;
+}
+
+
+/* RODAPE */
+
+.rodape {
+    background-color: #AB977A;
+    height: 100px;
+}
+
+.img-redes-sociais {
+    width: 50px;
+}
+
+.pequeno {
+    font-size: 2px;
+}
