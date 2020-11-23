@@ -112,10 +112,15 @@ table {
 
 td button {
     background-color: #fadf63;
-    width: 150px;
-    height: 30px;
+    width: 100px;
+    height: 25px;
     border-radius: 5px;
     color: black;
+    padding: 0;
+}
+
+td {
+    margin: 0px 200px;
 }
 
 .container-do-search {
@@ -140,4 +145,10 @@ div>input {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+.botao-voltar {
+    display: block;
+    text-align: center;
+    padding: 50px;
 }
