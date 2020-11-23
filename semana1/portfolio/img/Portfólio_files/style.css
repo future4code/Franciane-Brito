@@ -1,0 +1,90 @@
+/* GERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+/* .root {
+    --cor-principal: #272727;
+    : var(--cor-principal);
+}
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    background-color: #111628;
+    height: 100px;
+    color: #FFF;
+    font-size: 40px;
+}
+
+.meu-nome {
+    padding: 20px 400px 20px 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.paginas {
+    padding: 5px;
+}
+
+
+/* CONTEUDO */
+
+.conteudo {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: #F6F6F6;
+    height: 400px;
+    width: 100%;
+}
+
+.img-linguagens,
+p,
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+h1,
+.img-linguagens {
+    padding: 60px 20px 30px 45px;
+    font-size: 35px;
+}
+
+.img-linguagens:hover {
+    color: black;
+}
+
+
+/* RODAPE */
+
+.rodape {
+    background-color: #F3503C;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-redes-sociais {
+    width: 30px;
+    margin: 20px;
+}
+
+.pequeno {
+    font-size: 2px;
+}
