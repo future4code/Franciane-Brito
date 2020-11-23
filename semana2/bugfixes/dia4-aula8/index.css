@@ -77,6 +77,10 @@ a {
     padding: 15px 0px;
 }
 
+li {
+    margin: 0px 500px;
+}
+
 #container-de-descricao>p {
     padding-top: 100px;
     margin: 0% 43%;
