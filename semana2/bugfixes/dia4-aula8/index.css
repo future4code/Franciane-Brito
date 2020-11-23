@@ -25,12 +25,8 @@ button:focus {
     color: white;
 }
 
-img {
-    width: 100px;
-}
-
-div img {
-    background: black;
+td>img {
+    width: 50px;
 }
 
 .botao-amarelo {
