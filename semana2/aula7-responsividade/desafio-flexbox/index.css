@@ -1,0 +1,95 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#first-block {
+    background-color: red;
+    height: 15vh;
+}
+
+.blue-block {
+    background-color: blue;
+}
+
+.yellow-block {
+    background-color: yellow;
+}
+
+.green-block {
+    background-color: green;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+    margin: 10px;
+    height: 30vh;
+    width: 48vw
+}
+
+.white-block {
+    background-color: white;
+    margin: 10px;
+    width: 30vw;
+    height: 15vh;
+}
+
+.container-colorido,
+.container-preto,
+.container-branco {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+}
+
+.container-colorido {
+    flex-wrap: wrap;
+}
+
+.blue-block,
+.yellow-block,
+.green-block {
+    width: 31vw;
+    height: 15vh;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 426px) and (max-width: 770px) {
+    .green-block {
+        width: 100vw;
+    }
+    .container-branco {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .blue-block,
+    .yellow-block,
+    .white-block {
+        width: 47vw;
+    }
+    #block-onze {
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .blue-block,
+    .yellow-block,
+    .green-block,
+    .black-block,
+    .white-block {
+        width: 100vw;
+    }
+    .container-branco,
+    .container-preto {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
