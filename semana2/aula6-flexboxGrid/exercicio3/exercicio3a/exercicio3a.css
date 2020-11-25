@@ -17,10 +17,13 @@ body {
 
 .pink-background {
     background-color: fuchsia;
+    height: 63vh;
 }
 
 .blue-background {
     background-color: blue;
+    height: 20vh;
+    width: 50vw;
 }
 
 .red-background {
@@ -33,4 +36,38 @@ body {
 
 .purple-background {
     background-color: purple;
+    height: 10vh;
+}
+
+.red-background,
+.lightgreen-background {
+    height: 10vh;
+}
+
+
+/* top-container */
+
+#top-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 30vw 70vw;
+    height: 7vh;
+}
+
+.green-background,
+.yellow-background,
+.pink-background,
+.blue-background,
+.purple-background,
+.red-background,
+.lightgreen-background {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+#middle-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
