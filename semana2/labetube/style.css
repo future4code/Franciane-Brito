@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #202020;
+    font-family: 'Montserrat', sans-serif;
+    color: honeydew;
+}
+
+img {
+    border-radius: 5px;
+    width: 23vw;
+    height: 13vw;
+}
+
+header {
+    background-color: #d40c0c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    height: 12vh;
+}
+
+input {
+    border: none;
+    background-color: #202020;
+    height: 25px;
+    width: 20vw;
+    border-radius: 0 7px;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+    height: 88vh;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #272727;
+    border-radius: 0 0 5px 5px;
+    margin: 5px;
+    width: 23vw;
+}
+
+section:hover {
+    background-color: #d40c0c;
+    color: #272727;
+}
+
+section:active {
+    background-color: #EF843A;
+}
+
+section h3 {
+    margin: 20px;
+}
+
+article {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+article h2 {}
+
+video {
+    padding: 10px;
+    height: 65vh;
+    margin: 10px;
+}
+
+footer h2 {
+    margin: 10px;
+    color: #272727;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d40c0c;
+    height: 12vh;
+}
+
+.img-compartilhar {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 426px) {
+    main {
+        grid-template-rows: repeat(9, 1fr);
+        grid-template-columns: 1fr;
+        height: 100vh;
+    }
+    section {
+        width: 100vw;
+    }
+    /* footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #202020;
+        height: 12vh;
+        width: 100vw;
+    } */
+}
