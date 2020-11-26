@@ -1,72 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Controle de Estoque</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <div>
+    <div class="cabecalho">
         <p>Arte e Pintura</p>
+        <div class="">
+            <a href="./index.html">Página Inicial</a>
+            <a href="./ctrl-estoque.html">Controle de Estoque</a>
+            <a href="./add-produto.html">Adicionar Produto</a>
+            <a href="./funcionarios.html">Funcionários</a>
+        </div>
     </div>
 
-    <div>
-        <a href="./index.html">Página Inicial</a>
-        <a href="./ctrl-estoque.html">Controle de Estoque</a>
-        <a href="./add-produto.html">Adicionar Produto</a>
-        <a href="./funcionarios.html">Funcionários</a>
+    <div class="conteudo">
+        <h2 class="titulo-controle-de-estoque">Controle de Estoque</h2>
+
+        <table class="conteudo">
+            <tr>
+                <th>Foto</th>
+                <th>Descrição</th>
+                <th>Preço (R$)</th>
+                <th>Quantidade disponível</th>
+            </tr>
+
+            <tr>
+                <td><img src="img/pincel.jpeg" alt="Pincel" class="produtos" /></td>
+                <td>Pincel</td>
+                <td>15,00</td>
+                <td>25</td>
+            </tr>
+
+            <tr>
+                <td><img src="img/tinta.png" alt="Tintas" class="produtos" /></td>
+                <td> Tinta </td>
+                <td> 25,00 </td>
+                <td>30</td>
+            </tr>
+
+            <tr>
+                <td><img src="img/tela-em-branco.jpg" alt="tela para pintura" class="produtos" /></td>
+                <td>Tela para pintura</td>
+                <td>59,90</td>
+                <td>10</td>
+            </tr>
+
+            <tr>
+                <td><img src="img/pintura.webp" alt="Pintura" class="produtos" /></td>
+                <td>Pintura</td>
+                <td>200,00</td>
+                <td>5</td>
+            </tr>
+
+            <!-- Crie mais uma linha desta tabela abaixo \/ -->
+            <tr>
+                <td><img src="img/aula-de-pintura.webp" alt="Curso de Artes" class="produtos" /></td>
+                <td>Curso de Artes</td>
+                <td>199,90</td>
+                <td>30</td>
+            </tr>
+        </table>
     </div>
-
-    <h2>Controle de Estoque</h2>
-
-    <table>
-        <tr>
-            <th>Foto</th>
-            <th>Descrição</th>
-            <th>Preço (R$)</th>
-            <th>Quantidade disponível</th>
-        </tr>
-
-        <tr>
-            <td><img src="img/pincel.jpeg" alt="Pincel" /></td>
-            <td>Pincel</td>
-            <td>15,00</td>
-            <td>25</td>
-        </tr>
-
-        <tr>
-            <td><img src="img/tinta.png" alt="" /></td>
-            <td> Tinta </td>
-            <td> 25,00 </td>
-            <td>30</td>
-        </tr>
-
-        <tr>
-            <td><img src="img/tela-em-branco.jpg" alt="tela para pintura" /></td>
-            <td>Tela para pintura</td>
-            <td>59,90</td>
-            <td>10</td>
-        </tr>
-
-        <tr>
-            <td><img src="img/pintura.webp" alt="Pintura" /></td>
-            <td>Pintura</td>
-            <td>200,00</td>
-            <td>5</td>
-        </tr>
-
-        <!-- Crie mais uma linha desta tabela abaixo \/ -->
-        <tr>
-            <td><img src="img/aula-de-pintura.webp" alt="Curso de Artes" /></td>
-            <td>Curso de Artes</td>
-            <td>199,90</td>
-            <td>30</td>
-        </tr>
-    </table>
-
 </body>
 
 </html>
