@@ -16,7 +16,7 @@ resultado = !resultado && (bool1 || bool1) // true
 console.log("c. ", resultado)
 
 console.log("e. ", typeof resultado) // bolean
-*/
+/* /* */
 
 
 /* 
@@ -39,21 +39,22 @@ const valor = array[i+6]
 console.log('f. ', valor) // Vai retornar o item no indice 6 do array no caso o 9
  */
 
+
 //EXERCICIOS DE ESCRITA DE CÓDIGO
 
 //1
 
-/* let idadeUsuario = prompt("Qual é a sua idade?")
+let idadeUsuario = prompt("Qual é a sua idade?")
 let idadeAmigo = prompt("Qual é a idade do seu melhor amigo(a)?")
 
 let idadeMaior = idadeUsuario > idadeAmigo
 console.log("Sua idade é maior do que a do seu melhor amigo?", idadeMaior)
 console.log("Diferença de idade:", Number(idadeUsuario) - Number(idadeAmigo), "anos")
- */
+
 //2
 
-/* let numeroPar = prompt("Insira um numero par:")
-console.log(Number(numeroPar) % 2) */
+let numeroPar = prompt("Insira um numero par:")
+console.log(Number(numeroPar) % 2)
 
 // Todos os numeros pares o resto da divisão é 0
 
@@ -61,7 +62,7 @@ console.log(Number(numeroPar) % 2) */
 
 // 3
 
-/* let array = []
+let array = []
 let listaDeTarefas = array
 
 let primeiraTarefa = prompt("Digite aqui a primeira tarefa que você tem que fazer no dia?")
@@ -78,13 +79,13 @@ let indiceTarefaRealizada = prompt("Digite o indice da tarefa realizada 0, 1 ou 
 
 listaDeTarefas = array.splice(indiceTarefaRealizada, 1)
 
-console.log(array) */
+console.log(array)
 
 //4
-/* let nomeDoUsuario = prompt("Qual é o seu nome?")
+let nomeDoUsuario = prompt("Qual é o seu nome?")
 let emailDoUsuario = prompt("Qual é o seu email?")
 console.log("O e-mail ", emailDoUsuario, "foi cadastrado com sucesso. Seja bem-vinda(o),", nomeDoUsuario, "!")
- */
+
 
 //Desafios Extras 
 
