@@ -218,8 +218,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: U$", 1320 / 4.1)
-        console.log("Valor total:  U$", (1320 / 4.1) * quantidadeDeIngressos)
+        console.log("Valor do ingresso: U$", 660 / 4.1)
+        console.log("Valor total:  U$", (660 / 4.1) * quantidadeDeIngressos)
 
     } else if (tipoDeJogo === "do") {
         console.log("---Dados da compra---")
@@ -229,8 +229,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: R$", 1320)
-        console.log("Valor total:  R$", 1320 * quantidadeDeIngressos)
+        console.log("Valor do ingresso: R$", 660)
+        console.log("Valor total:  R$", 660 * quantidadeDeIngressos)
     }
 } else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && categoria === 2) {
     if (tipoDeJogo === "in") {
@@ -241,8 +241,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: U$", 880 / 4.1)
-        console.log("Valor total:  U$", (880 / 4.1) * quantidadeDeIngressos)
+        console.log("Valor do ingresso: U$", 440 / 4.1)
+        console.log("Valor total:  U$", (440 / 4.1) * quantidadeDeIngressos)
 
     } else if (tipoDeJogo === "do") {
         console.log("---Dados da compra---")
@@ -252,8 +252,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: R$", 880)
-        console.log("Valor total:  R$", 880 * quantidadeDeIngressos)
+        console.log("Valor do ingresso: R$", 440)
+        console.log("Valor total:  R$", 440 * quantidadeDeIngressos)
     }
 } else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && categoria === 3) {
     if (tipoDeJogo === "in") {
@@ -264,8 +264,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: U$", 550 / 4.1)
-        console.log("Valor total:  U$", (550 / 4.1) * quantidadeDeIngressos)
+        console.log("Valor do ingresso: U$", 330 / 4.1)
+        console.log("Valor total:  U$", (330 / 4.1) * quantidadeDeIngressos)
 
     } else if (tipoDeJogo === "do") {
         console.log("---Dados da compra---")
@@ -275,8 +275,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: R$", 550)
-        console.log("Valor total:  R$", 550 * quantidadeDeIngressos)
+        console.log("Valor do ingresso: R$", 330)
+        console.log("Valor total:  R$", 330 * quantidadeDeIngressos)
     }
 } else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && categoria === 4) {
     if (tipoDeJogo === "in") {
@@ -287,8 +287,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: U$", 220 / 4.1)
-        console.log("Valor total:  U$", (220 / 4.1) * quantidadeDeIngressos)
+        console.log("Valor do ingresso: U$", 170 / 4.1)
+        console.log("Valor total:  U$", (170 / 4.1) * quantidadeDeIngressos)
 
     } else if (tipoDeJogo === "do") {
         console.log("---Dados da compra---")
@@ -298,8 +298,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "dt" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: R$", 220)
-        console.log("Valor total:  R$", 220 * quantidadeDeIngressos)
+        console.log("Valor do ingresso: R$", 170)
+        console.log("Valor total:  R$", 170 * quantidadeDeIngressos)
     }
 }
 
@@ -314,6 +314,29 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
+        console.log("Valor do ingresso: U$", 1980 / 4.1)
+        console.log("Valor total:  U$", (1980 / 4.1) * quantidadeDeIngressos)
+
+    } else if (tipoDeJogo === "do") {
+        console.log("---Dados da compra---")
+        console.log("Nome do cliente:", nomeCompleto)
+        console.log("Tipo do jogo:", "Nacional")
+        console.log("Etapa do jogo:", "Final")
+        console.log("Categoria:  ", categoria)
+        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+        console.log("---Valores---")
+        console.log("Valor do ingresso: R$", 1980)
+        console.log("Valor total:  R$", 1980 * quantidadeDeIngressos)
+    }
+} else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && categoria === 2) {
+    if (tipoDeJogo === "in") {
+        console.log("---Dados da compra---")
+        console.log("Nome do cliente:", nomeCompleto)
+        console.log("Tipo do jogo:", "Internacional")
+        console.log("Etapa do jogo:", "Final")
+        console.log("Categoria:  ", categoria)
+        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
+        console.log("---Valores---")
         console.log("Valor do ingresso: U$", 1320 / 4.1)
         console.log("Valor total:  U$", (1320 / 4.1) * quantidadeDeIngressos)
 
@@ -328,7 +351,7 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && cate
         console.log("Valor do ingresso: R$", 1320)
         console.log("Valor total:  R$", 1320 * quantidadeDeIngressos)
     }
-} else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && categoria === 2) {
+} else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && categoria === 3) {
     if (tipoDeJogo === "in") {
         console.log("---Dados da compra---")
         console.log("Nome do cliente:", nomeCompleto)
@@ -351,29 +374,6 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && cate
         console.log("Valor do ingresso: R$", 880)
         console.log("Valor total:  R$", 880 * quantidadeDeIngressos)
     }
-} else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && categoria === 3) {
-    if (tipoDeJogo === "in") {
-        console.log("---Dados da compra---")
-        console.log("Nome do cliente:", nomeCompleto)
-        console.log("Tipo do jogo:", "Internacional")
-        console.log("Etapa do jogo:", "Final")
-        console.log("Categoria:  ", categoria)
-        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
-        console.log("---Valores---")
-        console.log("Valor do ingresso: U$", 550 / 4.1)
-        console.log("Valor total:  U$", (550 / 4.1) * quantidadeDeIngressos)
-
-    } else if (tipoDeJogo === "do") {
-        console.log("---Dados da compra---")
-        console.log("Nome do cliente:", nomeCompleto)
-        console.log("Tipo do jogo:", "Nacional")
-        console.log("Etapa do jogo:", "Final")
-        console.log("Categoria:  ", categoria)
-        console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
-        console.log("---Valores---")
-        console.log("Valor do ingresso: R$", 550)
-        console.log("Valor total:  R$", 550 * quantidadeDeIngressos)
-    }
 } else if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && categoria === 4) {
     if (tipoDeJogo === "in") {
         console.log("---Dados da compra---")
@@ -383,8 +383,8 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: U$", 220 / 4.1)
-        console.log("Valor total:  U$", (220 / 4.1) * quantidadeDeIngressos)
+        console.log("Valor do ingresso: U$", 330 / 4.1)
+        console.log("Valor total:  U$", (330 / 4.1) * quantidadeDeIngressos)
 
     } else if (tipoDeJogo === "do") {
         console.log("---Dados da compra---")
@@ -394,7 +394,9 @@ if ((tipoDeJogo === "in" || tipoDeJogo === "do") && etapaDoJogo === "fi" && cate
         console.log("Categoria:  ", categoria)
         console.log("Quantidade de Ingressos:", quantidadeDeIngressos)
         console.log("---Valores---")
-        console.log("Valor do ingresso: R$", 220)
-        console.log("Valor total:  R$", 220 * quantidadeDeIngressos)
+        console.log("Valor do ingresso: R$", 330)
+        console.log("Valor total:  R$", 330 * quantidadeDeIngressos)
     }
+} else {
+    console.log("Veja se digitou o valores pedidos! :)")
 }
