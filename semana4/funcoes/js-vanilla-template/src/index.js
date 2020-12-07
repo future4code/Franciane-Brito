@@ -28,9 +28,8 @@ mensagemQuemSou()
 function mensagemQuemSou(nome, idade, cidade, eEstudante) {
     if (eEstudante === true) {
         console.log("Eu sou , " + nome + " tenho " + idade + " anos, moro em " + cidade + " e sou estudante.")
-    } else {
+    } else if (eEstudante === false) {
         console.log("Eu sou , " + nome + " tenho " + idade + " anos, moro em " + cidade + " não sou estudante.")
-
     }
 }
 mensagemQuemSou("Franciane", 21, "Minas Gerais", true)
@@ -134,9 +133,9 @@ hello2(25, 35)
 
 //EXERCÍCIO 2
 //A)
-const arrayPar = []
 
 function eParErray(array) {
+    const arrayPar = []
     for (i of array) {
         if (i % 2 === 0) {
             arrayPar.push(i * 2)
