@@ -113,17 +113,22 @@ function eParArray2(array) {
 eParArray2(array)
 
 
-//E)
-
-
-
 /* DESAFIOS */
 
 //EXERCÍCIO 1
+//1)
+hello = (mensagem) => {
+    console.log(mensagem)
+}
+hello("Olá Mundo!")
 
-
-
-
+//2)
+let soma = 0
+hello2 = (valor1, valor2) => {
+    soma = valor1 + valor2
+    console.log(soma)
+}
+hello2(25, 35)
 
 
 
@@ -156,18 +161,26 @@ function numeroMaior(array) {
 numeroMaior(array)
 
 //C)
+/* let maior = 0
 
-const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
-
-let maior = 0
-
-function numeroMaior(array) {
+function numeroMaior2(array) {
     for (let i = 0; i < array.length; i++) {
-        if (numeroMaior(array) > maior) {
-            maior = array[i]
+        if (array[i] > maior) {
+            maior = i
             console.log(maior)
         }
     }
     //  return maior
 }
-numeroMaior(array)
+numeroMaior2(array) */
+
+//D)
+
+function arrayInvertido(array) {
+    let novoArray = []
+    for (let i = array.length; i > 0; i--) {
+        novoArray.push(array[i])
+    }
+    return novoArray
+}
+arrayInvertido(array)
