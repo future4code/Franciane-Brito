@@ -11,51 +11,31 @@
  * 
  */
 
-/* CRIAR CONDIÇÃO PARA "A" */
 
-/* VALORES DAS CARTAS */
-let cartaValor = [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-let valorAleatorio = Math.floor(Math.random() * 12 - 1)
-let cartaValorAleatorio = cartaValor[valorAleatorio]
-    //console.log(cartaValorAleatorio)
-
-/* NIPE DAS CARTAS */
-
-let cartaTipo = ["♠", "♣", "♥", "♦"]
-let tipoAleatorio = Math.floor(Math.random() * 4 - 1)
-let cartaTexto = cartaTipo[tipoAleatorio]
-
-
-/* CARTAS COM VALOR 10 */
-let cartaTextoS = ["J", "K", "Q", 10]
-if (cartaValorAleatorio === 10) {
-
-    let tipoValor10 = Math.floor(Math.random() * 4 - 1)
-    let cartaValorAleatorioE = cartaTextoS[tipoValor10]
-    console.log(cartaValorAleatorioE + cartaTexto)
-} else {
-    console.log(cartaValorAleatorio + cartaTexto)
-}
-const comprarCarta = cartaValorAleatorioE + cartaTexto
-
-
-
-
-
-/* console.log("Bem vindo ao jogo de Blackjack!")
+console.log("Bem vindo ao jogo de Blackjack!")
 if (confirm("Quer iniciar uma nova rodada?")) {
-    let comprarCarta
-        //  Math.floor(Math.random() * 10)
+    // let comprarCarta
+    const carta1Usuario = comprarCarta()
+    const carta2Usuario = comprarCarta()
+    let pontuacaoUsuario = carta1Usuario.valor + carta2Usuario.valor
 
-    // console.log(carta.texto) 
-    // imprime o texto da carta. Nesse caso: "K♦️"
 
-    //  console.log(carta.valor) 
-    // imprime o valor da carta (um número). Nesse caso: 10)
+    console.log("Usuário - cartas: " + carta1Usuario.texto + " " + carta2Usuario.texto + " - pontuação " + pontuacaoUsuario)
+    const carta1Computador = comprarCarta()
+    const carta2Computador = comprarCarta()
+    let pontuacaoComputador = carta1Computador.valor + carta2Computador.valor
+    console.log("Computador - cartas: " + carta1Computador.texto + " " + carta2Computador.texto + " - pontuação " + pontuacaoComputador)
 
- */
-/* 
+    if (pontuacaoUsuario === pontuacaoComputador) {
+        console.log("empate")
+    } else if (pontuacaoUsuario > pontuacaoComputador) {
+        console.log("O usuário ganhou!")
+    } else if (pontuacaoUsuario < pontuacaoComputador) {
+        console.log("O computador ganhou!")
+    } else if (pontuacaoUsuario || pontuacaoUsuario) {
+        console.log("O computador ganhou!")
+    }
+
+} else {
+    console.log("O jogo acabou!")
 }
-else {
-    console.log("O jogo acabou")
-} */
