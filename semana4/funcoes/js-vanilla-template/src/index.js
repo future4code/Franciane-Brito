@@ -21,18 +21,19 @@ SUGESTÃO: multiNumPar*/
 //A)
 function mensagemQuemSou() {
     console.log("Eu sou Franciane, tenho 21 anos, moro em Minas Gerais e sou estudante.")
+    return "Eu sou Franciane, tenho 21 anos, moro em Minas Gerais e sou estudante."
 }
 mensagemQuemSou()
 
 //B)
-function mensagemQuemSou(nome, idade, cidade, eEstudante) {
+function mensagemQuemSou2(nome, idade, cidade, eEstudante) {
     if (eEstudante === true) {
         console.log("Eu sou , " + nome + " tenho " + idade + " anos, moro em " + cidade + " e sou estudante.")
     } else if (eEstudante === false) {
         console.log("Eu sou , " + nome + " tenho " + idade + " anos, moro em " + cidade + " não sou estudante.")
     }
 }
-mensagemQuemSou("Franciane", 21, "Minas Gerais", true)
+mensagemQuemSou2("Franciane", 21, "Minas Gerais", true)
 
 //EXERCÍCIO 5
 //A) 
@@ -46,8 +47,10 @@ somaDoisNumeros(20, 25)
 //B)
 function eMaior(numA, numB) {
     if (numA >= numB) {
+        console.log(true)
         return true
     } else {
+        console.log(false)
         return false
     }
 }
@@ -86,13 +89,14 @@ ePar(10)
 //C)
 
 
-function eParErray(array) {
+function eParErray() {
     let quantNumPar = 0
     for (i of array) {
         if (i % 2 === 0) {
             quantNumPar++
         }
     }
+    console.log(quantNumPar)
     return quantNumPar
 }
 eParErray(array)
