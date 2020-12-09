@@ -30,24 +30,25 @@
 
     </header>
     <section>
-        <div class="semana">
+        <div class="semana" onclick=stiloLinha()>
             <h3>Domingo</h3>
-            <div id="domingo"></div>
+            <div id="domingo" class="dia-da-semana" onclick=stiloLinha()></div>
         </div>
 
         <div class="semana">
             <h3>Segunda-feira</h3>
-            <div id="segunda"></div>
+            <div id="segunda" class="dia-da-semana"></div>
         </div>
 
         <div class="semana">
             <h3>Terça-feira</h3>
-            <div id="terca"></div>
+            <div id="terca" class="dia-da-semana"></div>
+
         </div>
 
         <div class="semana">
             <h3>Quarta-feira</h3>
-            <div id="quarta"></div>
+            <div id="quarta" class="dia-da-semana"></div>
         </div>
 
         <div class="semana">
@@ -57,13 +58,15 @@
 
         <div class="semana">
             <h3>Sexta-feira</h3>
-            <div id="sexta"></div>
+            <div id="sexta" class="dia-da-semana"></div>
         </div>
 
         <div class="semana">
             <h3>Sábado</h3>
-            <div id="sabado"></div>
+            <div id="sabado" class="dia-da-semana"></div>
         </div>
+
+        <button id="clear" onclick=limparTarefas()>Limpar Tarefas</button>
     </section>
 
 </body>

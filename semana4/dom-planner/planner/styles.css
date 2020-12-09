@@ -22,3 +22,18 @@ section {
     width: 14%;
     padding: 5px;
 }
+
+@media only screen and (max-width: 500px) {
+    section {
+        flex-direction: column;
+        align-items: center;
+        /*  justify-content: center; */
+    }
+    header {
+        flex-direction: column;
+    }
+    .semana {
+        width: 90vw;
+        height: 20vh;
+    }
+}
