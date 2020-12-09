@@ -38,7 +38,7 @@ function funcao1() {
     }
     campoTarefa.value = null
 }
-
+/* 
 function stiloLinha() {
     diaDomingo.style = "text-decoration: line-through;"
     diaSegunda.style = "text-decoration: line-through;"
@@ -51,7 +51,7 @@ function stiloLinha() {
 
     console.log("lugar")
 
-}
+} */
 
 const lugar = document.getElementById("dia-da-semana")
 
