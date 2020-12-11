@@ -18,14 +18,14 @@ ou impar. No final vai aoarecer no console o tamanho do array numeros, array e a
 
 // 1-
 const array = [12, 25, 35, 48, 68]
-for(elemento of array) {
+    for(elemento of array) {
     console.log(elemento)
 }
- for(let i = 0; i < array.length; i++) {
+    for(let i = 0; i < array.length; i++) {
     console.log(array[i])
 }  
-let i = 0
-while(i < array.length) {
+    let i = 0
+    while(i < array.length) {
     console.log(array[i])
     i++
 } 
