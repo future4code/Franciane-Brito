@@ -13,3 +13,20 @@ outro de numeros impares. O Loop adiciona cada elemento ao seu respectivo array 
 ou impar. No final vai aoarecer no console o tamanho do array numeros, array e array2 */
 
 
+
+/* Exercícios de lógica de Porgramação */
+
+// 1-
+const array = [12, 25, 35, 48, 68]
+for(elemento of array) {
+    console.log(elemento)
+}
+ for(let i = 0; i < array.length; i++) {
+    console.log(array[i])
+}  
+let i = 0
+while(i < array.length) {
+    console.log(array[i])
+    i++
+} 
+
