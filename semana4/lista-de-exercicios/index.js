@@ -61,3 +61,40 @@ function tipoDeTriangulo(a, b, c) {
     tipoDeTriangulo(2, 2, 2)
     tipoDeTriangulo(2, 1, 2)
     tipoDeTriangulo(1, 2, 3) */
+
+/* 5-
+
+function diferenca(numeroA, numeroB) {
+     let diferencaA = numeroA - numeroB
+    let diferencaB = numeroB - numeroA
+    if(diferencaA > 0) {
+        console.log(`A diferença entre eles é ${diferencaA}`)
+    } else if (diferencaB > 0){
+        console.log(`A diferenca entre eles é ${diferencaB}`)
+    }
+}
+
+function eDivisivel(numeroA, numeroB) {
+     if(numeroA % numeroB === 0){
+        console.log(`Numero ${numeroA} é divisivel por ${numeroB}`)
+    } else {
+        console.log(`Numero ${numeroA} não é divisivel por ${numeroB}`)
+    } 
+    if(numeroB % numeroA === 0){
+        console.log(`Numero ${numeroB} é divisivel por ${numeroA}`)
+    } else {
+        console.log(`Numero ${numeroB} não é divisivel por ${numeroA}`)
+    }
+}
+
+function eMaior(numeroA, numeroB) {
+    if(numeroA > numeroB){
+        console.log(`Numero maior é ${numeroA}`)
+    } else {
+        console.log(`Numero maior é ${numeroB}`)
+    }
+    
+   diferenca(numeroA, numeroB)
+   eDivisivel(numeroA, numeroB)
+}
+eMaior(15, 30) */
