@@ -98,3 +98,61 @@ function eMaior(numeroA, numeroB) {
    eDivisivel(numeroA, numeroB)
 }
 eMaior(15, 30) */
+
+
+
+
+/* Exercícios de Funções */
+// 1-
+
+const array = [10, 20, 30, 45, 55, 20, 10]
+
+let oMaior = 0
+let segundoMaior = 0
+
+function segundoMaior(array) {
+    for (i of array) {
+        if (i > oMaior) {
+            oMaior = i
+        }
+    }
+    for (i of array) {
+        if (i > numSegundoMaior && i < oMaior) {
+            numSegundoMaior = i
+                //  console.log(numSegundoMaior)
+        }
+    }
+    return numSegundoMaior
+}
+
+segundoMaior(array)
+
+
+const array = [10, 20, 30, 45, 55, 20, 5]
+let oMenor = array[0]
+let numSegundoMenor = array[0]
+
+function segundoMenor(array) {
+
+
+    for (i of array) {
+        if (i < oMenor) {
+            oMenor = i
+            console.log(oMenor)
+        }
+    }
+
+    for (i of array) {
+        if (i < numSegundoMenor && i > oMenor) {
+            numSegundoMenor = i
+                //  console.log(numSegundoMenor)
+        }
+    }
+    return numSegundoMenor
+}
+
+segundoMenor(array)
+
+
+/* Exercícios de Objetos */
+/* Exercícios de Funções de array */
