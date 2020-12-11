@@ -103,7 +103,7 @@ eMaior(15, 30) */
 
 
 /* Exercícios de Funções */
-// 1-
+/*  1-
 
 const array = [10, 20, 30, 45, 55, 20, 10]
 
@@ -128,7 +128,7 @@ function segundoMaior(array) {
 segundoMaior(array)
 
 
-const array = [10, 20, 30, 45, 55, 20, 5]
+const array = [110, 20, 30, 45, 55, 20, 5]
 let oMenor = array[0]
 let numSegundoMenor = array[0]
 
@@ -138,21 +138,25 @@ function segundoMenor(array) {
     for (i of array) {
         if (i < oMenor) {
             oMenor = i
-            console.log(oMenor)
         }
     }
 
     for (i of array) {
         if (i < numSegundoMenor && i > oMenor) {
             numSegundoMenor = i
-                //  console.log(numSegundoMenor)
         }
     }
     return numSegundoMenor
 }
 
-segundoMenor(array)
+segundoMenor(array) */
 
+/* 2- 
+saudacao = () => {
+    alert("Hello Labenu!")
+}
+saudacao()
+ */
 
 /* Exercícios de Objetos */
 /* Exercícios de Funções de array */
