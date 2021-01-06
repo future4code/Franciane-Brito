@@ -25,9 +25,9 @@ class App extends React.Component {
     filtro: ''
   }
 
- /*  componentDidUpdate() {
-   
-   const tarefas = {
+  componentDidUpdate() {
+
+    const tarefas = {
       id: this.state.id,
       texto: this.state.texto,
       completa: this.state.completa
@@ -42,7 +42,7 @@ class App extends React.Component {
     const tarefasString = localStorage.getItem("tarefas")
     const tarefasObjeto = JSON.parse(tarefasString)
 
-    if(tarefasObjeto) {
+    if (tarefasObjeto) {
       this.setState({
         id: tarefasObjeto.id,
         texto: tarefasObjeto.texto,
@@ -52,27 +52,11 @@ class App extends React.Component {
 
   };
 
-aoMudarNome = (e) => {
-  this.setState({
-    id: this.state.tarefas.id
-  });
-};
-
-aoMudarEmail = (e) => {
-  this.setState({
-    texto: e.target.value
-  });
-};
-
-aoMudarIdade = (e) => {
-  this.setState({
-    completa: e.target.value
-  });
-};
- */
-
   onChangeInput = (event) => {
     this.setState({ inputValue: event.target.value })
+    this.setState({ id: event.target.value });
+    this.setState({ texto: event.target.value });
+    this.setState({ completa: event.target.value });
   }
 
   criaTarefa = () => {
@@ -81,7 +65,7 @@ aoMudarIdade = (e) => {
       id: Date.now(),
       texto: this.state.inputValue,
       completa: false
-    } 
+    }
 
     const novaListaDeTarefas = [... this.state.tarefas, novaTarefa]
 
@@ -109,10 +93,32 @@ aoMudarIdade = (e) => {
   }
 
   onChangeFilter = (event) => {
-    
-
     this.setState({ filtro: event.target.value })
   }
+
+  apagaTodasAsTarefas = () => {
+    const apagado = {
+    }
+    const apagarTarefas = [apagado]
+    this.setState({ tarefas: apagarTarefas })
+  }
+
+  removerTarefa = (id) => {
+    console.log("Removendo mensagem")
+
+    const tarefasAtuais = this.state.tarefas
+    if (window.confirm("Tem certeza que quer apagar essa tarefa?")) {
+
+      const novaLista = tarefasAtuais.filter((tarefa) => {
+        return tarefa.id !== id;
+
+      })
+      this.setState({ tarefas: novaLista });
+    }
+  }
+
+
+
 
   render() {
     const listaFiltrada = this.state.tarefas.filter((tarefa) => {
@@ -132,6 +138,7 @@ aoMudarIdade = (e) => {
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput} />
           <button onClick={this.criaTarefa} >Adicionar</button>
+          <button onClick={this.apagaTodasAsTarefas}>Apagar Tudo</button>
         </InputsContainer>
         <br />
 
@@ -146,6 +153,7 @@ aoMudarIdade = (e) => {
         <TarefaList >
           {listaFiltrada.map((tarefa) => {
             return (
+              <p onDoubleClick={this.removerTarefa}>
               <Tarefa
                 completa={tarefa.completa}
                 onClick={() => this.selectTarefa(tarefa.id)}
@@ -153,10 +161,11 @@ aoMudarIdade = (e) => {
                 {tarefa.texto}
 
               </Tarefa>
-          )
-        })}
+              </p>
+            )
+          })}
         </TarefaList>
-        </div>
+      </div>
     )
   }
 }
@@ -176,7 +185,7 @@ class Formulario extends React.Component {
   componentDidMount() {
     const usuarioString = localStorage.getItem("usuario");
     const usuarioObjeto = JSON.parse(usuarioString);
-    
+
     if(usuarioObjeto) {
       this.setState({
         nome: usuarioObjeto.nome,
@@ -236,3 +245,16 @@ class Formulario extends React.Component {
 
 export default Formulario;
 */
+
+/* removerMensagem = (nome) => {
+  console.log("Removendo mensagem")
+
+  const mensagensAtuais = this.state.mensagens
+  if(window.confirm("Tem certeza que quer apagar essa mensagem") === true){
+  const novaLista = mensagensAtuais.filter((mensagem) => {
+    return mensagem.nomeUsuario !== nome;
+
+})
+this.setState({ mensagens: novaLista });
+}
+} */
