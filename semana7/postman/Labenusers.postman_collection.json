@@ -1,0 +1,20 @@
+{
+	"info": {
+		"_postman_id": "52a85d42-d41c-4e09-a625-5a8fa1d111ec",
+		"name": "Labenusers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
