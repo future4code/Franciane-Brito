@@ -26,22 +26,22 @@ export default class Login extends React.Component {
   render() {
 
     return (
-      <Container>
+      
         
         <Formuario>
           <label>Nome</label>
           <input 
-        /*   value={this.state.nomeInput} */
-          onchage={this.props.onChangeName}/>
+        /*   value={this.props.onChangeName} */
+          onChange={this.props.onChangeName}/>
        
           <label>Email</label>
           <input 
-     /*      value={this.state.emailInput} */
-          onchage={this.props.onChangeEmail}
+          /* value={this.props.onChangeEmail} */
+          onChange={this.props.onChangeEmail}
           />
-          
+        
         </Formuario>
-      </Container>
+      
 
     );
   }

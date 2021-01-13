@@ -24,7 +24,7 @@ export default class Lista extends React.Component {
       <Container>
         <h2>Usuários Cadastrados:</h2>
         <div>
-        <p>{this.props.nome}<button>X</button></p>
+        <p>{this.props.nome}<button>x</button></p>
         </div>
       </Container>
 

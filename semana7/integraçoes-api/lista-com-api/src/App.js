@@ -2,43 +2,60 @@ import axios from "axios";
 import React from 'react';
 import Login from './Components/Login';
 import Lista from './Components/Lista';
+import Styled from 'styled-components';
+
+const Formulario = Styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+`
+const BotaoFormulario = Styled.button`
+width: 20vw;
+`
 
 export default class App extends React.Component {
   state = {
-    usuarios: [],
+    usuarios: [
+    ],
     nomeInput: "",
-    emailInput: ""
+    emailInput: "",
+    telaRenderisada: ""
   }
 
   componentDidMount = () => {
-
+    this.pegarUsuarios()
+    
   }
 
-//FUNÇÕES LISTA 
+  
 
-pegarUsuarios = () => {
-  axios
-  .get(
-    "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-    {
-      headers: {
-        Authorization: "franciane-brito-epps"
-      }
-    }
-  )
-  .then((resposta) => {
-    this.setState({ usuarios: resposta.data.result.list })
-  })
-  .catch((erro) => {
-  console.log(erro.mensage)
-  })
-}
+  //FUNÇÕES LISTA 
+
+  pegarUsuarios = () => {
+    axios
+      .get(
+        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+        {
+          headers: {
+            Authorization: "franciane-brito-epps"
+          }
+        }
+      )
+      .then((resposta) => {
+        this.setState({ usuarios: resposta.data })
+        console.log(this.state.usuarios)
+        alert('Usuario criado')
+      })
+      .catch((erro) => {
+        console.log("Deu errooooo não foi possivel pegar usuarios", erro.mensage)
+      })
+  }
 
 
 
-//FIM FUNÇÕES LISTA
+  //FIM FUNÇÕES LISTA
 
-//FUNÇÕES TELA DE LOGIN
+  //FUNÇÕES TELA cadastrar usuarios
   criarUsuario = () => {
     const body = {
       name: this.state.nomeInput,
@@ -52,17 +69,18 @@ pegarUsuarios = () => {
         {
           headers: {
             Authorization: "franciane-brito-epps"
-          }
+          },
         }
       )
       .then((reposta) => {
         this.setState({ nomeInput: "" })
         this.setState({ emailInput: "" })
+        this.pegarUsuarios()
+        alert("Usuario criado com sucesso")
       })
       .catch((error) => {
-        console.log(error.message)
+       alert("Não foi possivel criar seu usuario")
       })
-
   }
 
   onChangeInputName = (event) => {
@@ -73,157 +91,80 @@ pegarUsuarios = () => {
     this.setState({ emailInput: event.target.value })
   }
   //FIM FUNÇÕES TELA DE LOGIN
-  render() {
 
-    return (
-      <div className="App">
-        <button>Ir para pagina de lista</button>
+
+  botaoLista = () => {
+    this.setState({ telaRenderisada: true })
+  }
+
+  botaoLogin = () => {
+    this.setState({ telaRenderisada: false })
+  }
+
+  defineTela = () => {
+    if (this.state.telaRenderisada) {
+      const renderizaUsuarios = this.state.usuarios.map((usuario) => {
+        return <p>{usuario.name}<button onClick={() => this.deletarUsario(usuario.id)}>x</button></p>
+      })
+
+      return (
+        <div className="App">
+          <button onClick={this.botaoLogin}>Ir para login</button>
+          {renderizaUsuarios}
+        </div>
+      )
+    } else {
+      return (
         <div>
+           <button onClick={this.botaoLista}>Ir para a lista</button>
+           <Formulario>
           <Login
             onChangeName={this.onChangeInputName}
             onChangeEmail={this.onChangeInputEmail}
+         
           />
-          <button onClick={this.criarUsuario}>Salvar</button>
+          <BotaoFormulario onClick={this.criarUsuario}>Salvar</BotaoFormulario>
+          </Formulario>
         </div>
-        <Lista />
-      </div>
 
-    );
+      )
+    }
   }
-}
+//função deletar usuario
 
+deletarUsario = (id) => {
 
-/*
-state = {
-  ,
-}
-
-componentDidMount = () => {
-
-}
-
-todosOsUsuarios = () => {
   axios
-  .get(
-    "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
+  .delete(
+    `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`,
     {
       headers: {
         Authorization: "franciane-brito-epps"
-      }
+      },
     }
-  )
-  .then((resposta) => {
-    this.setState({listaUsuarios: })
+  ).then((resposta) => {
+    alert("Usuario deletado")
   })
+  .catch((erro) => {
+    alert("Não foi possive deletar usuario")
+  })
+
 }
 
-*/
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-class App extends React.Component {
-  state = {
-    playlists: [],
-    playlistValue: ""
-  };
-
-  componentDidMount = () => {
-    this.pegarPlaylists();
-  };
-
-  pegarPlaylists = () => {
-    axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
-        {
-          headers: {
-            Authorization: "severo-dumont"
-          }
-        }
-      )
-      .then((resposta) => {
-        this.setState({ playlists: resposta.data.result.list });
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
-  criarPlaylist = () => {
-    const body = {
-      name: this.state.playlistValue
-    };
-
-    axios
-      .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
-        body,
-        {
-          headers: {
-            Authorization: "severo-dumont"
-          }
-        }
-      )
-      .then((res) => {
-        this.setState({ playlistValue: "" });
-        this.pegarPlaylists();
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
-  onChangePlaylistValue = (event) => {
-    this.setState({ playlistValue: event.target.value });
-  };
 
   render() {
-    const renderedPlaylists = this.state.playlists.map((playlist) => {
-      return <p key={playlist.id}>{playlist.name}</p>;
-    });
 
     return (
-      <div className="App">
-        <div>
-          <input
-            placeholder="Nome da Playlist"
-            value={this.state.playlistValue}
-            onChange={this.onChangePlaylistValue}
-          />
-          <button onClick={this.criarPlaylist}>Criar Playlist</button>
-        </div>
-        {renderedPlaylists}
+      <div>
+       
+        {this.defineTela()}
       </div>
+
     );
   }
 }
 
- */
