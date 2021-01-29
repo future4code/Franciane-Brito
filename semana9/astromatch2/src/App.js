@@ -1,44 +1,47 @@
-import React, { useEffect, useState } from 'react'
-import PageHome from './Components/PageHome/PageHome'
+import React, { useState } from 'react'
 import Styled from 'styled-components'
 import CardMaches from './Components/PageMaches/CardMaches'
 import HeaderHome from './Components/PageHome/HeaderHome'
 import HeaderMaches from './Components/PageMaches/HeaderMaches'
-import axios from 'axios'
+import ContentHome from './Components/PageHome/ContentHome'
 
-
+const Page = Styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #F3F1F2;
+  border: solid 1px #F1527B;
+  width: 32vw;
+  border-radius: 10px;
+  -webkit-box-shadow: 4px 1px 30px -3px #F1527B; 
+  box-shadow: 4px 1px 30px -3px #F1527B;
+`
 const ContainerApp = Styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
+  display: flex;
+  justify-content: center;
+  background-color: #F1527B;
+  background: -moz-linear-gradient(#F1527B, #F36360, #F68044);
 `
 
 function App() {
-  const [page, setPage] = useState(true)  
+  const [page, setPage] = useState(true)
 
-
-
-
-
-  const mudaTela = () => {
+  const returnMaches = () => {
     setPage(false)
-  
   }
 
-  const voltaHome = () => {
+  const returnHome = () => {
     setPage(true)
   }
 
   return (
     <ContainerApp>
-      
-      {page ? <HeaderHome click={() => {mudaTela()}}/> : <HeaderMaches click={() => {voltaHome()}}/>}
-      {page ? <PageHome /> : <CardMaches />}
-  {/*   <button onClick={() => {mudaTela()}} >Tela</button> */}
+      <Page>
+        {page ? <HeaderHome click={() => { returnMaches() }} /> : <HeaderMaches click={() => { returnHome() }} />}
+        {page ? <ContentHome /> : <CardMaches />}
+      </Page>
     </ContainerApp>
   );
 }
-
 export default App;

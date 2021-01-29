@@ -1,28 +1,29 @@
 import React from 'react'
 import Styled from 'styled-components'
 import GroupIcon from '@material-ui/icons/Group';
-import CheckIcon from '@material-ui/icons/Check';
 
 const Header = Styled.div`
-display: flex;
-width: 25vw;
-height: 13vh;
-justify-content: space-around;
-border-bottom: solid 1px gray;
-`
-
-const styledCheckIcon = Styled.div`
-fontSize: small;
+  display: flex;
+  width: 25vw;
+  height: 13vh;
+  justify-content: space-around;
+  border-bottom: solid 1px #F1527B;
 `
 const Title1 = Styled.span`
-padding-left: 20px;
-color: green;
+  padding-left: 20px;
+  color: #F1527B;
+  font-size: 25px;
 `
 const Title2 = Styled.span`
-color: red;
+  color: #F68044;
+  font-size: 25px;
 `
 const ContainerIcone = Styled.div`
-padding: 20px;
+  padding: 20px;
+  transform: scale(1.3);
+  &:hover {
+    transform: scale(1.5);
+  }
 `
 
 function HeaderHome(props) {
@@ -42,8 +43,4 @@ function HeaderHome(props) {
 
 export default HeaderHome;
 
-
-/*
-import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
-*/
 
