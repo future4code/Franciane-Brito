@@ -16,7 +16,7 @@ fontSize: small;
 `
 const Title1 = Styled.span`
 padding-left: 20px;
-color: green;
+color: #333;
 `
 const Title2 = Styled.span`
 color: red;
@@ -25,22 +25,23 @@ const ContainerIcone = Styled.div`
 padding: 20px;
 `
 
-function HeaderHome(props) {
+function HeaderMaches(props) {
     return (
         <Header>
+            <ContainerIcone onClick={props.click}>
+            <GroupIcon/>
+            </ContainerIcone>
+           
             <h2>
                 <Title1>astro</Title1>
                 <Title2>match</Title2>
             </h2>
-            <ContainerIcone onClick={props.click}>
 
-            <GroupIcon/>
-            </ContainerIcone>
         </Header>
     );
 }
 
-export default HeaderHome;
+export default HeaderMaches;
 
 
 /*

@@ -4,7 +4,7 @@ import Styled from 'styled-components'
 import Footer from './FooterHome'
 
 const ContainerContent = Styled.div`
-displa: flex;
+display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
@@ -60,7 +60,7 @@ function ContentPage() {
                 <Description>{perfil.bio}</Description>
 
             <Footer 
-            teste={() => { pegaPerfil() }} 
+            teste={() => { pegaPerfil(perfil.id) }} 
             id={perfil.id}/>
             </ContainerContent>
     )

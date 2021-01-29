@@ -19,10 +19,10 @@ border-radius: 20px;
 box-shadow: 4px 1px 30px -3px rgba(0,0,0,0.75);
 `
 
-function PageHome() {
+function PageHome(props) {
   return (
     <ContainerPage>
-      <HeaderHome />
+   {/*    <HeaderHome click={props.click}/> */}
       <ContentHome />
 {/*       <FooterHome /> */}
     </ContainerPage>
