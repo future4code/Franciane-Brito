@@ -1,7 +1,6 @@
 import React from 'react'
 import './Post.css'
 
-import {IconeComContador} from '../IconeComContador/IconeComContador'
 
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 
