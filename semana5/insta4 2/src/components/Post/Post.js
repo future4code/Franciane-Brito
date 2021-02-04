@@ -1,11 +1,14 @@
 import React from 'react'
 import './Post.css'
+
 import {IconeComContador} from '../IconeComContador/IconeComContador'
+
+import {IconeComContador} from '../IconeComContador/IconeComContador'
+
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
-
 
 
 class Post extends React.Component {
