@@ -7,10 +7,8 @@ import CreateTripPage from '../Pages/CreateTripPage/CreateTripPage'
 import ListTripsPage from '../Pages/ListTripsPage/ListTripsPage'
 import LoginPage from '../Pages/LoginPage/LoginPage'
 import TripDetailsPage from '../Pages/TripDetailsPage/TripDetailsPage'
-import TripCandidate from '../Pages/TripCandidate/TripCandidate'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { goToTripCandidate } from './Coordinator';
-import  HeaderHome from '../Components/HeaderHome'
+
 
 function Router() {
   return (
@@ -28,16 +26,10 @@ function Router() {
           <ListTripsPage />
         </Route>
 
-        <Route exact path='/trip-details/:id'>
+        <Route exact path='/trip-details'>
           <TripDetailsPage />
         </Route>
         
-        <Route exact path='/trip-candidate/:id'>
-          <TripCandidate />
-        </Route>
-        
-
-
         <Route exact path='/create-trip'>
           <CreateTripPage />
         </Route>
