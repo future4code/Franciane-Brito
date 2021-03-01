@@ -1,38 +1,40 @@
 import React from 'react';
-import { Form, ContainerInput } from './Styled'
+import { Form, ContainerInput, FormComment, StyledCard } from './Styled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField'
 import useForm from '../../Hooks/UseForm'
 import axios from 'axios';
 import { baseAxios, BASE_URL } from '../../Contants/urls';
+import { gotoFeedPage } from '../../Router/Coordinator'
 
 const FormCreatePost = () => {
-   /*  const history = useHistory() */
+     const history = useHistory()
     const [form, onChange, clearFields] = useForm({ text: "", title: "" })
 
     const createPost = () => {
         axios.post(`${BASE_URL}/posts`, form, baseAxios)
-          .then((res) => {
-              alert("Seu comentário foi publicado :)")
-              clearFields()
-          /*   detailsPost() */
-             /*  console.log(res.data) */
-          })
-          .catch((err) => {
-            alert(err.response.data)
-            console.log(err)
-          })
-      }
+            .then((res) => {
+                alert("Seu comentário foi publicado :)")
+                clearFields()
+                gotoFeedPage(history)
+            })
+            .catch((err) => {
+                alert(err.response.data)
+                
+            })
+    }
 
     const onSubmitForm = (e) => {
         e.preventDefault()
         createPost()
+        gotoFeedPage(history)
     }
 
     return (
-        <div>
-            <form onSubmit={onSubmitForm}>
+        <StyledCard>
+              
+            <FormComment onSubmit={onSubmitForm}>
                 <TextField
                     name={"title"}
                     value={form.title}
@@ -50,12 +52,19 @@ const FormCreatePost = () => {
                     value={form.text}
                     onChange={onChange}
                     label={"Conteúdo do post"}
-                    id="outlined-basic"
+                    id={"outlined-basic"}
                     variant={"outlined"}
                     fullWidth
                     margin={"normal"}
                     required
-                    type={"text"} />
+                    type={"text"}
+                    multiline
+                    rows={6}
+                    fullWidth
+                    margin={"normal"}
+                    defaultValue="Default Value"
+                    variant="outlined"
+                />
 
                 <Button
                     type={"submit"}
@@ -66,8 +75,8 @@ const FormCreatePost = () => {
                     color={"primary"}>
                     Postar
                 </Button>
-            </form >
-        </div>
+            </FormComment >
+        </StyledCard>
     );
 }
 export default FormCreatePost;

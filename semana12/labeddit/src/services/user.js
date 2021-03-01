@@ -6,7 +6,7 @@ export const login = (body, clearFields, history) => {
         .then((res) => {
             localStorage.setItem('token', res.data.token)
             clearFields()
-            history.push('/feed')
+            history.push('/')
         })
         .catch((err) => {
             alert(err.response.data.message)
@@ -17,7 +17,7 @@ export const register = (body, clearFields, history) => {
     axios.post(`${BASE_URL}/signup`, body)
         .then((res) => {
             localStorage.setItem('token', res.data.token)
-            history.push('/feed')
+            history.push('/')
             clearFields()
         })
         .catch((err) => {
@@ -31,11 +31,10 @@ export const votesCounter = (id, voteValue, detailsPost) => {
     }
       axios.put(`${BASE_URL}/posts/${id}/vote`, body, baseAxios)
         .then((res) => {
-         /*  detailsPost() */
+          detailsPost()
         })
         .catch((err) => {
         /*   alert("Tente novamente :)") */
-        console.log(err)
         })
     }
 
@@ -45,8 +44,7 @@ export const votesCounterComments = (id, voteValue, idPost, detailsPost) => {
     }
       axios.put(`${BASE_URL}/posts/${idPost}/comment/${id}/vote`, body, baseAxios)
         .then((res) => {
-          /* detailsPost() */
-          console.log('deu certo')
+          detailsPost()
         })
         .catch((err) => {
           alert(err.response.data)

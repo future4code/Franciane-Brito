@@ -7,7 +7,8 @@ import { baseAxios, BASE_URL } from '../Contants/urls'
 const GlobalState = (props) => {
     const [name, setName] = useState([])
     const [posts, setPosts] = useState([])
-  const [post, setPost] = useState({})
+    const [post, setPost] = useState({})
+    const [coloButton, setColorButton] = useState('')
 
     const [countVotes, setCountVotes] = useState(0)
 
@@ -21,16 +22,16 @@ const GlobalState = (props) => {
             })
     }
 
-const states = { name, posts, post, countVotes}
-const setters = { setName, setPosts, setPost, setCountVotes}
-const requests = { getPosts }
+    const states = { name, posts, post, countVotes }
+    const setters = { setName, setPosts, setPost, setCountVotes }
+    const requests = { getPosts }
 
-const data = { states, setters, requests}
+    const data = { states, setters, requests }
 
     return (
-    <GlobalStateContext.Provider value={data} >
-        {props.children}
-    </GlobalStateContext.Provider>
+        <GlobalStateContext.Provider value={data} >
+            {props.children}
+        </GlobalStateContext.Provider>
     )
 }
 

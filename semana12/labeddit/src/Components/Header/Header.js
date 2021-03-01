@@ -1,41 +1,3 @@
-/* import React, { useState } from 'react';
-import { ContainerHeader, Tytle, ContainerButton } from './Styled'
-import { gotoLoginPage, gotoRegisterPage, gotoFeedPage } from '../../Router/Coordinator'
-import { useHistory } from 'react-router-dom'
-
-const Header = () => {
-const history = useHistory()
-const token = localStorage.getItem('token')
-const [leftButtonText, setLeftButtonText] = useState(!token ? "Login" : "Logout")
-
-const logout = () => {
-  localStorage.removeItem('token')
-}
-
-const leftButtonAction = () => {
-  if(token) {
-    logout()
-    setLeftButtonText('Logout ')
-    gotoLoginPage(history)
-  } else {
-    gotoLoginPage(history)
-  }
-}
-
-  return (
-    <ContainerHeader>
-        <Tytle>LabEddit</Tytle>
-        <ContainerButton>
-      <button onClick={() => {}}>{leftButtonText}</button>
-            <button onClick={() => {gotoRegisterPage(history)}}>Cadastrar</button>
-            <button onClick={() => {gotoFeedPage(history)}}>Feed</button>
-
-        </ContainerButton>
-    </ContainerHeader>
-  );
-}
-
-export default Header; */
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -49,6 +11,11 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
+import { gotoLoginPage, gotoRegisterPage, gotoFeedPage } from '../../Router/Coordinator'
+import Button from '@material-ui/core/Button'
+import { useHistory } from 'react-router-dom'
+import Logo from '../../images/logo.png'
+import {Img} from './Styled'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,6 +30,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MenuAppBar() {
+  const history = useHistory()
+
   const classes = useStyles();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -83,22 +52,22 @@ export default function MenuAppBar() {
   return (
     <div className={classes.root}>
       <FormGroup>
-        <FormControlLabel
-          control={<Switch checked={auth} onChange={handleChange} aria-label="login switch" />}
-          label={auth ? 'Logout' : 'Login'}
-        />
+     
       </FormGroup>
-      <AppBar position="static">
+      <AppBar position="fixed" color={'inherit'}>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+          <IconButton edge="start" className={classes.menuButton} /* color="inherit" */ aria-label="menu">
+            {/* <MenuIcon /> */}
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Photos
+           <Img src={Logo} alt=''/>
           </Typography>
           {auth && (
             <div>
+
+            
               <IconButton
+                fontSize={'large'}
                 aria-label="account of current user"
                 aria-controls="menu-appbar"
                 aria-haspopup="true"
@@ -110,6 +79,7 @@ export default function MenuAppBar() {
               <Menu
                 id="menu-appbar"
                 anchorEl={anchorEl}
+
                 anchorOrigin={{
                   vertical: 'top',
                   horizontal: 'right',
@@ -122,9 +92,12 @@ export default function MenuAppBar() {
                 open={open}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={() => { gotoRegisterPage(history) }}>Cadastrar</MenuItem>
+                <MenuItem onClick={() => { gotoFeedPage(history) }}>Login</MenuItem>
+                <MenuItem onClick={() => { gotoFeedPage(history) }}>Feed</MenuItem>
               </Menu>
+              {/* <Button onClick={() => { gotoRegisterPage(history) }}>Cadastrar</Button>
+              <Button onClick={() => { gotoFeedPage(history) }}>Feed</Button> */}
             </div>
           )}
         </Toolbar>
@@ -132,3 +105,5 @@ export default function MenuAppBar() {
     </div>
   );
 }
+
+

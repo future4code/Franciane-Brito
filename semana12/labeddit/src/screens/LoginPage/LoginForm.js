@@ -10,20 +10,6 @@ const LoginForm = () => {
     const history = useHistory()
     const [form, onChange, clearFields] = useForm({ email: "", password: "" })
 
-    /*  const login = () => {
-        axios
-            .post('https://us-central1-labenu-apis.cloudfunctions.net/labEddit/login',
-                form
-            )
-            .then((res) => {
-                localStorage.setItem('token', res.data.token)
-                history.push('/feed')
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    } */
-
     const onSubmitForm = (e) => {
         e.preventDefault()
         login(form, clearFields, history)

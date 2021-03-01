@@ -4,30 +4,22 @@ import Card from '@material-ui/core/Card'
 
 export const ContainerContent = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column;
-  /* background-color: #F0F0F0; */
-  height: 80vh;
+  height: 90vh;
   color: 22FFFF;
-`
-export const Form = styled.form`
-margin: 10px;
-  width: 80vw;
-  max-width: 450px;
-/*   padding: 20px 0;
-  margin: 30px 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f0f0;
-  display: flex;
+  @media screen and (max-width: 500px) {
   flex-direction: column;
+  padding-top: 20vh;
   justify-content: center;
-  align-items: center;
-  width: 55vw;
-  height: 55vh;
-  border: solid 1px #d0d0d0;
-  box-shadow: 0px 0px 95px 6px rgba(0, 0, 0, 0.34);
-  border-radius: 5px; */
+  }
+ `
+export const Form = styled.form`
+  margin: 10px;
+  width: 80vw;
+  max-width: 650px;
+  @media screen and (max-width: 500px) {
+    max-width: 450px;
 `
 export const StyledTextField = styled(TextField)`
   width: 40vw;
@@ -45,4 +37,30 @@ export const StyledCard = styled(Card)`
   width: 70vw;
   border: solid 1px gray;
   height: 50vh;
+`
+export const ContainerImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+  width: 35vw;
+  height: 50vh;
+  margin-left: 100px;
+`
+
+export const ContainerForm = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  margin: 10px;
+  width: 70vw;
+`
+
+export const Image = styled.img`
+@media screen and (max-width: 500px) {
+  width: 65vw;
+  }
 `

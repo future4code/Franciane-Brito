@@ -18,9 +18,12 @@ display: flex;
 margin: 20px;
 width: 70vw;
 border: 1px solid #fff;
-&:hover{
-   /*  border: 1px solid #c0c0c0; */
+&:hover{ 
+    border-bottom: 1px solid #c0c0c0;
 }
+@media screen and (max-width: 500px) {
+  width: 90vw;
+  }
 `
 const Linha = styled.div`
 margin: 10px;
@@ -36,22 +39,52 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding: 25px;
-/* background-color: #f0f0f0; */
+background-color: #f0f0f0;
 width: 2vw;
+/* width: 66vw;
+padding: 7px;
+word-wrap: break-word; */
 `
+const StyledCardContent = styled(CardContent)`
+min-height: 8vh; 
+width: 66vw;
+padding: 10px;
+word-wrap: break-word;
+`
+
 const ContainerVotes = styled.div`
 padding-top: 10px;
-height: 5vh;
-/* background-color: #f5f5f5; */
+height: 40px;
 display: flex;
 align-items: center;
 width: 80vw;
 `
-const CountVotes = styled.p`
+const CountVotes = styled.div`
 padding: 10px;
 display: flex;
 align-items: center;
 `
+const StyledThumbUpAltIcon = styled(ThumbUpAltIcon)`
+  color: ${(props) => {
+    if (props.vote === 1) {
+      return "#3b5998"
+    } else {
+      return "#9f9f9f"
+    
+    }
+}}
+`
+const StyledThumbDownAltIcon = styled(ThumbDownAltIcon)`
+  color: ${(props) => {
+    if (props.vote === -1) {
+      return "#FF0000"
+    } else {
+      return "#9f9f9f"
+    
+    }
+}}
+`
+
 const CardComment = (props) => {
   return (
     <StyledCard>
@@ -70,23 +103,21 @@ const CardComment = (props) => {
             </Button>
           </CardActions>
 
-          <CardContent>
+          <StyledCardContent>
             <Typography gutterBottom variant="h5" component="h2">
             {props.title}
           </Typography>
             <Typography variant="h6" color="textSecondary" component="h3">
             {props.text}
           </Typography>
-          </CardContent>
+          </StyledCardContent>
         </CardActionArea>
 
         <ContainerVotes>
-          {/*  <StyledCardActions> */}
-                <ThumbUpAltIcon /* color="primary" */ fontSize='large' onClick={props.positive}/>
+                <StyledThumbUpAltIcon fontSize='large' onClick={props.positive} vote={props.vote}/>
                     <CountVotes>{props.voteCount}</CountVotes>
-                    <ThumbDownAltIcon /* color="primary" */ fontSize='large'onClick={props.negative}/>
+                    <StyledThumbDownAltIcon fontSize='large'onClick={props.negative} vote={props.vote}/>
               
-            {/* </StyledCardActions> */}
         </ContainerVotes>
       </div>
     </StyledCard>

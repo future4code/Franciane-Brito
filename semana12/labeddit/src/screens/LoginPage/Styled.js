@@ -1,14 +1,16 @@
 import styled from 'styled-components'
 import TextField from '@material-ui/core/Button'
 import Card from '@material-ui/core/Card'
+import ImageImageNetwork from '../../images/network.png'
 
 export const ContainerContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #F0F0F0;
   height: 100vh;
+  width: 100vw;
+    background-image: url(ImageNetwork);
 `
 export const Form = styled.form`
   margin: 10px;
@@ -47,4 +49,13 @@ export const StyledCard = styled(Card)`
   width: 70vw;
   border: solid 1px gray;
   height: 50vh;
+`
+export const Image = styled.img`
+width: 35vw;
+/* @media screen and (max-width: 500px) {
+  & {
+    width: 90vw;
+  }
+} */
+
 `

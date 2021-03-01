@@ -11,9 +11,13 @@ export const gotoRegisterPage = (history) => {
 }
 
 export const gotoFeedPage = (history) => {
-    history.push('/feed')
+    history.push('/')
 }
 
 export const gotoPostPage = (history, id) => {
     history.push(`/post/${id}`)
+}
+
+export const gotoCreatePostPage = (history) => {
+    history.push('/createpost')
 }

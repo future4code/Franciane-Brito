@@ -6,6 +6,7 @@ import FeedPage from '../screens/FeedPage/FeedPage'
 import ErrorPage from '../screens/ErrorPage/ErrorPage'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Header from '../Components/Header/Header'
+import CreatePostPage from '../screens/CreatePostPage/CreatePostPage'
 
 const Router = () => {
     return (
@@ -20,12 +21,16 @@ const Router = () => {
                     <RegisterPage />
                 </Route>
 
-                <Route exact path='/feed'>
+                <Route exact path='/'>
                     <FeedPage />
                 </Route>
 
                 <Route exact path='/post/:id'>
                     <PostPage />
+                </Route>
+
+                <Route exact path='/createpost'>
+                    <CreatePostPage />
                 </Route>
 
                 <Route>

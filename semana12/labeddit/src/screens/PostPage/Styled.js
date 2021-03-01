@@ -4,11 +4,12 @@ import Card from '@material-ui/core/Card';
 
 export const ContainerFeed = Styled.div`
 display: flex;
-justify-content: center;
+min-height: 100vh;
 align-items: center;
 flex-direction: column;
 background-color: #f0f0f0;
 width: 100vw;
+padding-top: 12vh;
 `
 export const ContainerCard = Styled.div`
 display: flex;
@@ -21,27 +22,22 @@ margin: 15px;
 padding:10px;
 `
 
-export const ContainerComment = Styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-/* background-color: pink;   */
-border: 2px solid #f0f0f0; 
-width: 85vw; 
-margin: 15px;
-padding:10px;
+export const StyledTextFieldComment = Styled(TextField)`
+width: 65vw; 
+
 `
-export const ContainerComments = Styled.div`
+export const FormComment = Styled.form`
 display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-/* background-color: pink;  */ 
-border: 2px solid #f0f0f0; 
-width: 85vw; 
+border: 2px solid #fff; 
+width: 65vw; 
 margin: 15px;
-padding:10px;
+border-radius: 15px;
+@media screen and (max-width: 500px) {
+    width: 85vw;
+    }
 `
 export const ContainerPage = Styled.div`
 /* background-color: #0000FF;
@@ -65,4 +61,7 @@ border: 1px solid #fff;
     transition-duration: 0.5s;
     border: 1px solid #c0c0c0;
 }
+@media screen and (max-width: 500px) {
+    width: 95vw;
+    }
 `

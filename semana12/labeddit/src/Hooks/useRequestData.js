@@ -14,7 +14,6 @@ const useRequestData = (initialData, url) => {
             setData(res.data.posts)
         })
         .catch((err) => {
-            console.log(err)
             alert('Ocorreu um erro tente novamente')
         })
     }, [url])

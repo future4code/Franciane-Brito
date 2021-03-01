@@ -5,28 +5,11 @@ import { useHistory } from 'react-router-dom';
 import TextField from '@material-ui/core/TextField'
 import axios from 'axios';
 import useForm from '../../Hooks/UseForm';
-import {register} from '../../services/user'
-
+import { register } from '../../services/user'
+import Checkbox from '@material-ui/core/Checkbox';
 const RegisterForm = () => {
     const [form, onChange, clearFields] = useForm({ email: "", username: "", password: "" })
     const history = useHistory()
-
-/* 
-    const register = () => {
-        axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labEddit/signup',
-            form
-          )
-          .then((res) => {
-            localStorage.setItem('token', res.data.token)
-            history.push('/feed')
-            console.log('Deu certo')
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-      } */
-
-    
 
     const onSubmitForm = (e) => {
         e.preventDefault()
@@ -75,7 +58,12 @@ const RegisterForm = () => {
                     type={"password"}
                 />
 
-
+                <p><Checkbox
+                    defaultChecked
+                    size="small"
+                    inputProps={{ 'aria-label': 'checkbox with small size' }}
+                />
+    Quero receber informações, marketing e atualizações por e-mail.</p>
 
                 <Button
                     type={"submit"}
