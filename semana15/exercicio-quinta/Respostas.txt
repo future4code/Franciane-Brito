@@ -1,0 +1,8 @@
+Exercício 1
+A- Utilizaria o método GET.
+B- Utilizaria a entidade /users.
+
+Exercício 2
+A- Passei por meio de Search? 
+B- Por meio de um enum é possivel garantir que apenas os dados estabelecidos 
+possam ser validos.
