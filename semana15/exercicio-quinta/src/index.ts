@@ -66,11 +66,14 @@ let users: user[] = [
     }
 ]
 
+const myUsers = users
+
+
 // Exercício 1
 app.get("/users", (req: Request, res: Response) => {
     let errorCode: number = 400;
     try {
-        const myUsers = users;
+        
         res.status(200).send(myUsers)
     } catch (error) {
         res.status(errorCode).send({ message: error.message });
@@ -82,7 +85,7 @@ app.get("/users/search", (req: Request, res: Response) => {
     let errorCode: number = 400;
     try {
         const typeSearch = req.query.type;
-        const myUsers = users;
+        
         const filteredUsers = myUsers.filter((u) => {
             return u.type.includes(typeSearch as string);
         });
@@ -103,13 +106,12 @@ app.get("/users/name/search", (req: Request, res: Response) => {
     let errorCode: number = 400;
     try {
         const nameSearch = req.query.name;
-        const myUsers = users;
+        
         const filteredUsers = myUsers.filter((u) => {
-            return u.name.includes(nameSearch as string);
+            u.name.includes(nameSearch as string);
         });
-        res.status(201).send(filteredUsers);
 
-        if (filteredUsers) {
+        if (filteredUsers.length) {
             res.status(201).send(filteredUsers);
         }
         else {
@@ -122,6 +124,75 @@ app.get("/users/name/search", (req: Request, res: Response) => {
 })
 
 // Exercício 4
+app.put("/users/add-user", (req: Request, res: Response) => {
+
+    let errorCode: number = 400;
+
+    try {
+
+        const reqBody: user = {
+            id: req.body.id,
+            name: req.body.name,
+            email: req.body.email,
+            type: req.body.type,
+            age: req.body.age
+        };
+
+        if (!reqBody.age ||
+            !reqBody.email ||
+            !reqBody.id ||
+            !reqBody.name ||
+            !reqBody.type) {
+            errorCode = 422;
+            throw new Error("Please check the fields.")
+        }
+
+        users.push(reqBody);
+        res.status(201).send({ message: "User created successfully" })
+
+    } catch (error) {
+        res.status(errorCode).send({ message: error.message });
+    }
+
+});
+
+// Exercício 5 e 6
+app.put("/users/edit/:id", (req: Request, res: Response) => {
+    let errorCode: number = 400;
+    try {
+    myUsers.forEach((u) => {
+        if (u.id === Number(req.params.id)) {
+            if (u.name.includes("ALTERADO" as string)) {
+                u.name = req.body.name + "-REALTERADO"
+                res.status(201).send();
+            } else {
+                u.name = req.body.name + "-ALTERADO"
+                res.status(201).send();
+            }
+        } 
+    })
+    } catch (error) {
+        res.status(errorCode).send({ message: error.message });
+    }
+})
+
+// Exercício 7
+app.delete("/users/remove/:id", (req: Request, res: Response) => {
+    let errorCode: number = 400;
+    try {
+    myUsers.forEach((u) => {
+        
+        if (u.id === Number(req.params.id)) {
+            let index = myUsers.indexOf(u);
+            myUsers.splice(index, 1)
+
+            res.status(201).send();
+        } 
+    })
+    } catch (error) {
+        res.status(errorCode).send({ message: error.message });
+    }
+})
 
 
 const server = app.listen(process.env.PORT || 3003, () => {

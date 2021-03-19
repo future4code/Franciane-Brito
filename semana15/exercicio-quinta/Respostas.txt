@@ -6,3 +6,7 @@ Exercício 2
 A- Passei por meio de Search? 
 B- Por meio de um enum é possivel garantir que apenas os dados estabelecidos 
 possam ser validos.
+
+Exercício 4
+B- Acho que é o metodo mais aprpriado pois ele serve para: 
+Inserir ou atualizar informações.
