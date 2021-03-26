@@ -1,5 +1,6 @@
 import app from "./app"
 import connection from "./connection"
+import express, { Express, Request, Response } from 'express'
 
 app.post("/actor", async (req, res) => {
     try {
@@ -31,23 +32,23 @@ app.get("/actor", async (req, res) => {
     }
 })
 
-app.put("/actor/:id", async (req, res) => {
-    try {
-        await connection("Actor")
-            .update({
-                salary: req.body.salary,
-                birth_Date: req.body.birthDate
-            })
-            .where({
-                name: req.params.name
-            })
-        res.send("Created!")
+// app.put("/actor/:id", async (req, res) => {
+//     try {
+//         await connection("Actor")
+//             .update({
+//                 salary: req.body.salary,
+//                 birth_Date: req.body.birthDate
+//             })
+//             .where({
+//                 name: req.params.name
+//             })
+//         res.send("Created!")
 
-    } catch (error) {
-        console.log(error.mensage)
-        res.status(500).send("Internal server error")
-    }
-})
+//     } catch (error) {
+//         console.log(error.mensage)
+//         res.status(500).send("Internal server error")
+//     }
+// })
 
 // Exercicio 1
 app.get("/actor/name", async (req, res) => {
@@ -55,7 +56,7 @@ app.get("/actor/name", async (req, res) => {
         const result = await connection.raw(`
               SELECT * FROM Actor WHERE name = "Juliana Paes"
             `)
-        
+
         res.status(200).send(result)
     } catch (error) {
         console.log(error.mensage)
@@ -69,8 +70,8 @@ app.get("/actor/gender-count", async (req, res) => {
         const result = await connection.raw(`
       SELECT COUNT(*) as count FROM Actor WHERE gender = "male"
     `);
-    const count = result[0][0];
-    res.status(200).send(count)
+        const count = result[0][0];
+        res.status(200).send(count)
 
     } catch (error) {
         console.log(error.mensage)
@@ -114,7 +115,7 @@ app.post("/actor/delete/:id", async (req, res) => {
 
 app.post("/actor/media/:gender", async (req, res) => {
     try {
-       const result = await connection("Actor")
+        const result = await connection("Actor")
             .avg("salary")
             .where(
                 "gender", req.params.gender
@@ -129,15 +130,43 @@ app.post("/actor/media/:gender", async (req, res) => {
 
 
 // Exercício 3
-// app.get("/actor/:id", async (req: Request, res: Response) => {
-//     try {
-//       const id = req.params.id;
-//       const actor = await getActorById(id);
-  
-//       res.status(200).send(actor)
-//     } catch (err) {
-//       res.status(400).send({
-//         message: err.message,
-//       });
-//     }
-//   });
+app.get("/actor/:id", async (req, res) => {
+    try {
+        const result = await connection("Actor")
+            .where("id", req.params.id)
+        res.status(201).send(result)
+
+    } catch (error) {
+        console.log(error.mensage)
+        res.status(500).send("Internal server error")
+    }
+})
+
+app.get("/actor/count/search", async (req, res) => {
+    try {
+        const result = await connection("Actor")    
+        .where(
+                "gender", req.params.gender
+            )
+            
+           
+        res.status(202).send(result)
+
+    } catch (error) {
+        console.log(error.mensage)
+        res.status(500).send("Internal server error")
+    }
+})
+
+app.post("/actor", async (req: Request, res: Response) => {
+  try {
+    await updateSalary(req.body.id, req.body.salary);
+    res.status(200).send({
+      message: "Success",
+    });
+  } catch (err) {
+    res.status(400).send({
+      message: err.message,
+    });
+  }
+});
