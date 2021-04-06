@@ -8,8 +8,8 @@ const hash = async (s: string): Promise<string> => {
 }
 
 const compare = async (
-  s: string, 
+  s: string,
   hash: string
-  ): Promise<boolean> => {
+): Promise<boolean> => {
   return bcrypt.compare(s, hash);
 }
