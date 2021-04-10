@@ -1,18 +1,14 @@
-import express, {Express} from 'express'
-import cors from 'cors'
+import app from "./app"
+import login from "./endpoints/login"
+import myProfile from "./endpoints/myProfile"
+import otherProfile from "./endpoints/otherProfile"
+import signup from "./endpoints/signup"
+import createRecipe from "./endpoints/createRecipe"
+import getRecipe from "./endpoints/getRecipe"
 
-const app: Express = express();
-
-app.use(express.json());
-app.use(cors());
-
-import { AddressInfo } from "net";
-
-const server = app.listen(process.env.PORT || 3003, () => {
-    if (server) {
-       const address = server.address() as AddressInfo;
-       console.log(`Server is running in http://localhost: ${address.port}`);
-    } else {
-       console.error(`Failure upon starting server.`);
-    }
-});
+app.post('/signup', signup)
+app.post('/login', login)
+app.get('/user/profile', myProfile)
+app.get('/user/:id', otherProfile)
+app.post('/recipe', createRecipe)
+app.get('/recipe/:id', getRecipe)

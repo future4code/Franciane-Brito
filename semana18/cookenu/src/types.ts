@@ -1,6 +1,6 @@
 export type authenticationData = {
-    id: string,
-    role: string
+    id: string
+   //  role: string
  }
  
  export type userCredentials = {
@@ -13,10 +13,10 @@ export type authenticationData = {
     nickname: string
  }
  
- export enum userRole {
+/*  export enum userRole {
     ADMIN = "ADMIN",
     NORMAL = "NORMAL"
- }
+ } */
  
  export type user = {
     id: string, 
@@ -24,3 +24,10 @@ export type authenticationData = {
     name: string, 
     password: string
    }
+
+   export type recipe = {
+      id: string, 
+      title: string, 
+      description: string, 
+      cratedAt: string
+     }

@@ -13,15 +13,14 @@ export const generateToken = (
       { expiresIn: "24d" }
    )
 }
-
 export const getTokenData = (
    token: string
 ): authenticationData | null => {
    try {
 
-      const { id, role } = jwt.verify(token, process.env.JWT_KEY!) as authenticationData
+      const { id } = jwt.verify(token, process.env.JWT_KEY!) as authenticationData
 
-      return { id, role }
+      return { id }
 
    } catch (error) {
       

@@ -11,11 +11,11 @@
 ## Login
 * e-mail 
 * password 
-RETURN: token
-
-<!-- * status: `"to_do" || "doing" || "done"` -->
 
 ## Informações do próprio perfil
+<!-- ... -->
+<!-- * status: `"to_do" || "doing" || "done"` -->
+
 
 
 ## Criar Receitas
@@ -42,11 +42,9 @@ CREATE TABLE cookenu_users (
 ```sql
 CREATE TABLE cookenu_recipes (
     id VARCHAR(64) PRIMARY KEY,
-    description VARCHAR(1024) DEFAULT "No description provided",
-    deadline DATE,
-    status ENUM("TO_DO", "DOING", "DONE") DEFAULT "TO_DO",
-    author_id VARCHAR(64),
-    FOREIGN KEY (author_id) REFERENCES cookenu_users(id)
+    title VARCHAR(64) NOT NULL,
+    description VARCHAR(1024) NOT NULL,
+    cratedAt VARCHAR(64) NOT NULL
 );
 ```
 
@@ -97,21 +95,41 @@ CREATE TABLE cookenu_recipes (
             * name
             * email
 
-* Criar tarefa
-    * Método: PUT
-    * Path: /task
-    * Body: 
-        * title (obrigatório)
-        * description (obrigatório)
-        * deadline (obrigatório, formato DD/MM/YYYY)
-
-* Pegar tarefa pelo id
+* Pegar perfil de outro usuário
     * Método: GET
-    * Path: /task/:id
-    * Body de Resposta: (retornar um erro se não se encontrar) 
-        * id
-        * title
-        * description
-        * deadline (formato DD/MM/YYYY)
-        * status 
-        * authorNickname
+    * Path: /user/:id
+    * Entradas:
+        * Path Param
+            * id
+        * Headers:
+            * Authorization
+    * Saídas:
+        * Body
+            * id
+            * name
+            * email
+
+* Criar Reaceita 
+    * Método: POST
+    * Path: /recipe
+    * Entradas:
+        * Headers:
+            * Authorization
+        * Body
+            * title
+            * description
+
+* Pegar receita 
+    * Método: GET
+    * Path: /recipe/:id
+    * Entradas:
+        * Path Param
+            * id(id da receita)
+        * Headers:
+            * Authorization
+    * Saídas:
+        * Body
+            * id
+            * title
+            * description
+            * cratedAt

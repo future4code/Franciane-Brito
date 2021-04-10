@@ -2,28 +2,34 @@ import { Request, Response } from "express";
 import connection from "../connection";
 import { generateToken } from "../services/authenticator";
 import generateId from "../services/idGenerator";
-import { user, userRole } from "../types";
+import { user } from "../types";
 import { hash } from "../services/hashManager";
 
-export default async function register(
+export default async function signup(
    req: Request,
    res: Response
 ): Promise<void> {
    try {
 
-      const { name, email, password, role } = req.body
+      const { name, email, password } = req.body
 
       if (!name || !email || !password) {
          res.statusCode = 422
          throw new Error("Preencha os campos 'name', 'password' e 'email'")
       }
 
-     /*  if(role.toUpperCase() !== userRole.ADMIN && role.toUpperCase() !== userRole.NORMAL){
+      if (password.length < 6){
          res.statusCode = 422
-         throw new Error("Os valores possíveis para 'role' são NORMAL e ADMIN")
-      } */
+         throw new Error("Escolha uma senha com no mínimo 6 caracteres")
+      }
 
-      const [user] = await connection('to_do_list_users')
+
+      /*  if(role.toUpperCase() !== userRole.ADMIN && role.toUpperCase() !== userRole.NORMAL){
+          res.statusCode = 422
+          throw new Error("Os valores possíveis para 'role' são NORMAL e ADMIN")
+       } */
+
+      const [user] = await connection('cookenu_users')
          .where({ email })
 
       if (user) {
@@ -34,14 +40,11 @@ export default async function register(
       const id: string = generateId();
 
       const cypherText = await hash(password);
-
-      const newUser: user = { id, name, email, password: cypherText}
-
-      await connection('to_do_list_users')
+      const newUser: user = { id, name, email, password: cypherText }
+      
+      await connection('cookenu_users')
          .insert(newUser)
-
-      const token: string = generateToken({ id, role })
-
+      const token: string = generateToken({ id })
       res.status(201).send({ token })
 
    } catch (error) {
