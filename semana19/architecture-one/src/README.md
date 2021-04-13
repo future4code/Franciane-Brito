@@ -1,5 +1,4 @@
-
-# COOKENU
+# Arquitetura de Software 1
 
 ## ESTRUTURA DE DADOS 
 
@@ -14,20 +13,9 @@
 * password 
 RETURN: token
 
+## Delete User
+* id
 
-## Informações do próprio perfil
-
-
-## Criar Receitas
-* title
-* description 
-
-## Seguir usuário
-* id(do usuário que deseja seguir)
-
-## Feed
-
-___
 
 ## CRIAÇÃO DE TABELAS - MySql
 
@@ -40,8 +28,6 @@ CREATE TABLE semana19_users (
     role VARCHAR(6) NOT NULL 
 );
 ```
-
-
 
 ## ENDPOINTS
 
@@ -68,33 +54,19 @@ CREATE TABLE semana19_users (
         * Body
             * access token
 
-* Pegar próprio perfil
-    * Método: GET
-    * Path: /user/profile
-     * Entradas:
-        * Headers 
+* GetUsers
+    * Método: Get
+    * Path: /all
+    * Entradas:
+        * Headers
             * Authorization
     * Saídas:
         * Body
-            * id
-            * name
-            * email
+            * Users
 
-* Criar tarefa
+* DeleteUser
     * Método: PUT
-    * Path: /task
-    * Body: 
-        * title (obrigatório)
-        * description (obrigatório)
-        * deadline (obrigatório, formato DD/MM/YYYY)
-
-* Pegar tarefa pelo id
-    * Método: GET
-    * Path: /task/:id
-    * Body de Resposta: (retornar um erro se não se encontrar) 
-        * id
-        * title
-        * description
-        * deadline (formato DD/MM/YYYY)
-        * status 
-        * authorNickname
+    * Path: /:id
+    * Entradas:
+        * Headers
+            * Authorization
